@@ -23,7 +23,7 @@ const config = {
   url: 'https://lymau.github.io', // Your website URL
   // Set the /<baseUrl>/ pathname under which your site is served
   // For GitHub pages deployment, it is often '/<projectName>/'
-  baseUrl: '/akashic',
+  baseUrl: '/akashic/',
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
