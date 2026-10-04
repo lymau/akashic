@@ -17,3 +17,13 @@ hola:
   label: Hola
   permalink: /hola
   description: Hola tag description
+
+japanese:
+  label: Japanese
+  permalink: /japanese
+  description: Japanese learning notes
+
+journal:
+  label: Journal
+  permalink: /journal
+  description: Weekly progress entries
