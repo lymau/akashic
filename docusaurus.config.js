@@ -4,14 +4,14 @@
 // There are various equivalent ways to declare your Docusaurus config.
 // See: https://docusaurus.io/docs/api/docusaurus-config
 
-import {themes as prismThemes} from 'prism-react-renderer';
+import { themes as prismThemes } from 'prism-react-renderer';
 
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
-  title: 'My Site',
-  tagline: 'Dinosaurs are cool',
+  title: 'Akashic: The Astral Archives',
+  tagline: 'A practitioners journey through code, languages, and distribution',
   favicon: 'img/favicon.ico',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -27,8 +27,8 @@ const config = {
 
   // GitHub pages deployment config.
   // If you aren't using GitHub pages, you don't need these.
-  organizationName: 'facebook', // Usually your GitHub org/user name.
-  projectName: 'docusaurus', // Usually your repo name.
+  organizationName: 'lymau', // Usually your GitHub org/user name.
+  projectName: 'akashic', // Usually your repo name.
 
   onBrokenLinks: 'throw',
 
@@ -45,13 +45,7 @@ const config = {
       'classic',
       /** @type {import('@docusaurus/preset-classic').Options} */
       ({
-        docs: {
-          sidebarPath: './sidebars.js',
-          // Please change this to your repo.
-          // Remove this to remove the "edit this page" links.
-          editUrl:
-            'https://github.com/facebook/docusaurus/tree/main/packages/create-docusaurus/templates/shared/',
-        },
+        docs: false,
         blog: {
           showReadingTime: true,
           feedOptions: {
@@ -74,6 +68,36 @@ const config = {
     ],
   ],
 
+  plugins: [
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'japanese',
+        path: 'japanese',
+        routeBasePath: 'japanese',
+        sidebarPath: './sidebars-japanese.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'programming',
+        path: 'programming',
+        routeBasePath: 'programming',
+        sidebarPath: './sidebars-programming.js',
+      },
+    ],
+    [
+      '@docusaurus/plugin-content-docs',
+      {
+        id: 'marketing',
+        path: 'marketing',
+        routeBasePath: 'marketing',
+        sidebarPath: './sidebars-marketing.js',
+      },
+    ],
+  ],
+
   themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
     ({
@@ -83,19 +107,34 @@ const config = {
         respectPrefersColorScheme: true,
       },
       navbar: {
-        title: 'My Site',
+        title: 'Akashic: The Astral Archives',
         logo: {
-          alt: 'My Site Logo',
+          alt: 'The book of Akashic',
           src: 'img/logo.svg',
         },
         items: [
           {
             type: 'docSidebar',
-            sidebarId: 'tutorialSidebar',
+            docsPluginId: 'japanese',
+            sidebarId: 'japaneseSidebar',
             position: 'left',
-            label: 'Tutorial',
+            label: '日本語 Japanese',
           },
-          {to: '/blog', label: 'Blog', position: 'left'},
+          {
+            type: 'docSidebar',
+            docsPluginId: 'programming',
+            sidebarId: 'programmingSidebar',
+            position: 'left',
+            label: 'Programming',
+          },
+          {
+            type: 'docSidebar',
+            docsPluginId: 'marketing',
+            sidebarId: 'marketingSidebar',
+            position: 'left',
+            label: 'Marketing',
+          },
+          { to: '/blog', label: 'Blog', position: 'left' },
           {
             href: 'https://github.com/facebook/docusaurus',
             label: 'GitHub',
@@ -110,8 +149,8 @@ const config = {
             title: 'Docs',
             items: [
               {
-                label: 'Tutorial',
-                to: '/docs/intro',
+                label: 'Japanese',
+                to: '/japanese/intro',
               },
             ],
           },
@@ -146,7 +185,7 @@ const config = {
             ],
           },
         ],
-        copyright: `Copyright © ${new Date().getFullYear()} My Project, Inc. Built with Docusaurus.`,
+        copyright: `Copyright © ${new Date().getFullYear()} Akashic, Inc. Built with Docusaurus.`,
       },
       prism: {
         theme: prismThemes.github,
