@@ -1,22 +1,75 @@
-@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;700&family=Zen+Maru+Gothic:wght@500;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Didact+Gothic&family=EB+Garamond:ital,wght@0,400..800;1,400..800&family=JetBrains+Mono:wght@400;500;700&family=Noto+Sans+JP:wght@400;500;700&family=UnifrakturCook:wght@700&family=Zen+Maru+Gothic:wght@500;700&display=swap');
 
 :root {
-  --ifm-color-primary: #e5527a;
-  --ifm-font-family-base: 'Noto Sans JP', system-ui, sans-serif;
-  --ifm-heading-font-family: 'Zen Maru Gothic', sans-serif;
-  --ifm-global-radius: 12px;
-  --ifm-color-primary-dark: #d54a70;
-  --ifm-color-primary-darker: #c54066;
-  --ifm-color-primary-darkest: #a33252;
-  --ifm-color-primary-light: #ec6f96;
-  --ifm-color-primary-lighter: #f08eaf;
-  --ifm-color-primary-lightest: #f7bfd0;
-  --ifm-code-font-size: 95%;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.1);
+  /* ========================================================================== Base Akashic Typography & Geometry ========================================================================== */
+  --ifm-font-family-base: 'Didact Gothic', 'Noto Sans JP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --ifm-heading-font-family: 'UnifrakturCook', 'Noto Sans JP', serif;
+  --ifm-font-family-monospace: 'JetBrains Mono', SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --ifm-code-font-size: 88%;
+  --ifm-global-radius: 6px;
+  --ifm-line-height-base: 1.7;
+  /* Light Theme (Muted parchment / celestial slate fallbacks) */
+  --ifm-color-primary: #0093a2;
+  --ifm-color-primary-dark: #008492;
+  --ifm-color-primary-darker: #007d8a;
+  --ifm-color-primary-darkest: #006771;
+  --ifm-color-primary-light: #00a2b2;
+  --ifm-color-primary-lighter: #00a9ba;
+  --ifm-color-primary-lightest: #00bfd2;
+  --ifm-background-color: #f7f8fa;
+  --ifm-background-surface-color: #ffffff;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 242, 254, 0.08);
 }
 
+/* ========================================================================== Akashic Void & Astral Dark Mode (Primary Theme) ========================================================================== */
 [data-theme='dark'] {
-  --ifm-color-primary: #ff8fab;
-  --ifm-background-color: #1a1625;
-  --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
+  /* Arcane Cyan Primary Shades (#00f2fe base) */
+  --ifm-color-primary: #00f2fe;
+  --ifm-color-primary-dark: #00dad5;
+  --ifm-color-primary-darker: #00ceca;
+  --ifm-color-primary-darkest: #00aaa7;
+  --ifm-color-primary-light: #26f4fe;
+  --ifm-color-primary-lighter: #39f5fe;
+  --ifm-color-primary-lightest: #73f8ff;
+  /* Arcane Amethyst Secondary Accent (#b980ff) */
+  --akashic-accent-amethyst: #b980ff;
+  --akashic-accent-amethyst-glow: rgba(185, 128, 255, 0.25);
+  --akashic-accent-cyan-glow: rgba(0, 242, 254, 0.2);
+  /* Deep Obsidian Void Backgrounds */
+  --ifm-background-color: #0b0c10;
+  --ifm-background-surface-color: #121317;
+  /* Typography & High-Contrast Readability */
+  --ifm-font-color-base: #e0e2ec;
+  --ifm-heading-color: #f5f6fa;
+  --ifm-color-content-secondary: #9ba1b0;
+  /* Card, Container & Border Treatments */
+  --ifm-card-background-color: #16181f;
+  --ifm-toc-border-color: rgba(255, 255, 255, 0.07);
+  --ifm-hr-border-color: rgba(255, 255, 255, 0.08);
+  /* Navbar & Sidebar Obsidian Frosted Glass */
+  --ifm-navbar-background-color: rgba(11, 12, 16, 0.85);
+  --ifm-navbar-shadow: 0 1px 0 0 rgba(0, 242, 254, 0.1);
+  /* Code Blocks & Highlighted Lines */
+  --ifm-code-background: #0d0e12;
+  --docusaurus-highlighted-code-line-bg: rgba(0, 242, 254, 0.12);
+  /* Links & Hover States */
+  --ifm-link-color: #00f2fe;
+  --ifm-link-hover-color: #73f8ff;
+  --ifm-link-decoration: none;
+  /* Docusaurus Admonitions & Callouts (Tips, Notes, Warnings) */
+  --ifm-color-info: #00f2fe;
+  --ifm-color-secondary: #b980ff;
+}
+
+/* Subtle Astral glow for active navigation links */
+[data-theme='dark'] .navbar__link--active {
+  color: var(--ifm-color-primary) !important;
+  text-shadow: 0 0 12px var(--akashic-accent-cyan-glow);
+}
+
+/* Gothic display styling for documentation titles */
+[data-theme='dark'] h1,
+[data-theme='dark'] h2 {
+  font-family: var(--ifm-heading-font-family);
+  letter-spacing: -0.01em;
 }
